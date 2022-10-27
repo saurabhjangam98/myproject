@@ -1,0 +1,12 @@
+pipeline {
+agent any
+stages {
+    stage('compile') {
+	    steps { 
+		    echo 'compiling..'
+		    git url: 'https://github.com/saurabhjangam98/cicd-pipeline-train-schedule-autodeploy'
+		    sh script: '/opt/maven/bin/mvn compile'
+	    }
+    }
+}
+}
